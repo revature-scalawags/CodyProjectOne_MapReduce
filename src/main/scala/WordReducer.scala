@@ -1,6 +1,8 @@
 import org.apache.hadoop.mapreduce.Reducer
 import org.apache.hadoop.io.Text
 import org.apache.hadoop.io.IntWritable
+
+//Unchanged from WordReducer example
 class WordReducer extends Reducer[Text, IntWritable, Text, IntWritable] {
   override def reduce(
       key: Text,

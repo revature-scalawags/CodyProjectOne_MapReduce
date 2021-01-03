@@ -2,6 +2,8 @@ import org.apache.hadoop.mapreduce.Mapper
 import org.apache.hadoop.io.LongWritable
 import org.apache.hadoop.io.IntWritable
 import org.apache.hadoop.io.Text
+
+// Modified mapper to filter out unnecessary data
 class WordMapper extends Mapper[LongWritable, Text, Text, IntWritable] {
   override def map(
       key: LongWritable,
