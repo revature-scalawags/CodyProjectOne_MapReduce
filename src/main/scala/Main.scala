@@ -9,14 +9,17 @@ import org.apache.hadoop.io.IntWritable
 object Main extends App {
 
   if (args.length != 2) {
-    println("Usage: Main [input dir] [output dir]")
+    println("Usage: hadoop jar [this jar name] [input dir] [output dir]")
+    println("[this jar name] -> Name of this program when packaged as a jar")
+    println("[input dir] -> Name of hdfs directory when input data is located")
+    println("[output dir] -> Name of hdfs directory when output data will be stored (will create one with specified name if none exists)")
     System.exit(-1)
   }
 
   val job = Job.getInstance()
 
   job.setJarByClass(Main.getClass())
-  job.setJobName("Word Count")
+  job.setJobName("Wiki Clickstream MapReduce Filter")
   job.setInputFormatClass(classOf[TextInputFormat])
 
   FileInputFormat.setInputPaths(job, new Path(args(0)))
