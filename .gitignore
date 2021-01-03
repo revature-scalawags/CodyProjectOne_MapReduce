@@ -37,3 +37,6 @@ project/plugins/project/
 .ionide
 
 # End of https://www.toptal.com/developers/gitignore/api/scala,visualstudiocode,sbt,metals
+
+#Scala format
+.scalafmt.conf
